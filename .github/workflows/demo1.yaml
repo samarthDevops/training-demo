@@ -1,14 +1,9 @@
-name: Demo 2
-on: push
+name: Demo 1
+on: workflow_dispatch
 
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: first step
-        run: echo "first step"
-  second-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: second step
-        run: echo "second step"
+        run: echo ${{ github.event_name }}
